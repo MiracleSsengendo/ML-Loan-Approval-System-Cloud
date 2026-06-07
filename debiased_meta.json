@@ -1,0 +1,101 @@
+{
+  "debiased_features": [
+    "Gender",
+    "Dependents",
+    "ApplicantIncome",
+    "CoapplicantIncome",
+    "LoanAmount",
+    "Loan_Amount_Term",
+    "Credit_History"
+  ],
+  "removed_features": [
+    "Married",
+    "Education",
+    "Self_Employed",
+    "Property_Area"
+  ],
+  "confirmed_leaking": [
+    "Married",
+    "Education",
+    "Self_Employed"
+  ],
+  "stat_bias": {
+    "Gender": {
+      "p": 0.553799,
+      "biased": false
+    },
+    "Married": {
+      "p": 2e-06,
+      "biased": true
+    },
+    "Education": {
+      "p": 0.000393,
+      "biased": true
+    },
+    "Self_Employed": {
+      "p": 0.01005,
+      "biased": true
+    },
+    "Property_Area": {
+      "p": 0.0,
+      "biased": true
+    },
+    "ApplicantIncome": {
+      "p": 0.983542,
+      "biased": false
+    },
+    "CoapplicantIncome": {
+      "p": 0.798276,
+      "biased": false
+    },
+    "LoanAmount": {
+      "p": 0.224383,
+      "biased": false
+    },
+    "Loan_Amount_Term": {
+      "p": 0.00234,
+      "biased": true
+    },
+    "Credit_History": {
+      "p": 0.0,
+      "biased": true
+    }
+  },
+  "probe_results": {
+    "Married": {
+      "probe_acc": 0.9883,
+      "baseline": 0.6467,
+      "leakage": 0.3417,
+      "confirmed": true
+    },
+    "Education": {
+      "probe_acc": 0.985,
+      "baseline": 0.78,
+      "leakage": 0.205,
+      "confirmed": true
+    },
+    "Self_Employed": {
+      "probe_acc": 0.9967,
+      "baseline": 0.8417,
+      "leakage": 0.155,
+      "confirmed": true
+    },
+    "Property_Area": {
+      "probe_acc": 0.9433,
+      "baseline": 0.9433,
+      "leakage": 0.0,
+      "confirmed": false
+    }
+  },
+  "debiased_accuracy": 0.791667,
+  "debiased_precision": 0.733167,
+  "debiased_recall": 0.942308,
+  "debiased_f1": 0.824684,
+  "debiased_auc": 0.853733,
+  "debiased_cv_mean": 0.774167,
+  "debiased_cv_std": 0.01354,
+  "debiased_cv_variance": 0.000183,
+  "original_accuracy": 0.816667,
+  "accuracy_diff": -0.025,
+  "architecture": "7 -> 64 -> 32 -> 1"
+}
