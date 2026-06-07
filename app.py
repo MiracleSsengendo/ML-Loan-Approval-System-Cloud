@@ -29,17 +29,17 @@ def load_models():
     }
 
     try:
-        models["rf"] = joblib.load("Models/random_forest.pkl")
+        models["rf"] = joblib.load("random_forest.pkl")
     except Exception as e:
         st.error(f"Random Forest model not found: {e}")
 
     try:
-        models["debiased"] = joblib.load("Models/debiased_model.pkl")
+        models["debiased"] = joblib.load("debiased_model.pkl")
     except Exception as e:
         st.warning(f"Debiased model not found: {e}")
 
     try:
-        models["db_scaler"] = joblib.load("Models/debiased_scaler.pkl")
+        models["db_scaler"] = joblib.load("debiased_scaler.pkl")
     except Exception as e:
         st.warning(f"Debiased scaler not found: {e}")
 
@@ -51,7 +51,7 @@ def load_models():
         st.warning(f"debiased_meta.json not found — fairness check disabled: {e}")
 
     try:
-        models["X_train"] = pd.read_csv("Data/processed data/X_train.csv")
+        models["X_train"] = pd.read_csv("X_train.csv")
     except Exception as e:
         st.warning(f"Training data not found for LIME background: {e}")
 
