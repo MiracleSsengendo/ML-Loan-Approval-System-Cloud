@@ -44,7 +44,7 @@ def load_models():
         st.warning(f"Debiased scaler not found: {e}")
 
     try:
-        with open("Models/debiased_meta.json") as f:
+        with open("debiased_meta.json") as f:
             db_meta = json.load(f)
         models["db_features"] = db_meta["debiased_features"]
     except Exception as e:
